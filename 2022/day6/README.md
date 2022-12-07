@@ -1,0 +1,1 @@
+So far my favorite since the algorithm can work for both parts of the puzzles. Again, Set is the star here.

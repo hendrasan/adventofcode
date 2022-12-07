@@ -1,0 +1,1 @@
+Had fun with converting the input into an array of columns. After that, it's a matter of moving stack.
