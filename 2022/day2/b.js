@@ -61,8 +61,6 @@ input.forEach((round, i) => {
 
   const elfChoice = elfChoiceMap[elf];
   const yourInstruction = yourInstructions[you];
-  // console.log("elf choice", elfChoice);
-  // console.log("your instruction", yourInstruction);
 
   let yourChoice;
 
@@ -77,16 +75,12 @@ input.forEach((round, i) => {
     const nextIndex = (elfIndex + 1) % rpsArray.length;
     yourChoice = rpsArray[nextIndex];
   }
-  // console.log("your choice", yourChoice);
 
   const choiceScore = choiceScores[yourChoice];
-  // console.log("choice score", choiceScore);
 
   const resultScore = compare(elfChoice, yourChoice);
-  // console.log("result score", resultScore);
 
   const score = choiceScore + resultScore;
-  // console.log("score", score);
 
   scores += score;
 });

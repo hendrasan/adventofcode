@@ -18,7 +18,6 @@ groups.forEach((elf, i) => {
 
   elf.forEach((line, i) => {
     let rucksack = line.trim();
-    // console.log("rucksack", rucksack);
 
     const elfSet = new Set();
     for (const char of rucksack) {

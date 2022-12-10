@@ -6,19 +6,13 @@ const input = fs
   .readFileSync(path.join(__dirname, "input.txt"), "utf8")
   .split("\n");
 
-// console.log(input);
-
 const results = [];
 
 input.forEach((line, i) => {
   let rucksack = line.trim();
-  //   console.log("rucksack", rucksack);
-  //   console.log("length", rucksack.length);
 
   const left = rucksack.substring(0, rucksack.length / 2);
   const right = rucksack.substring(rucksack.length / 2, rucksack.length);
-  //   console.log("left", left);
-  //   console.log("right", right);
 
   const leftMap = new Set();
   for (const char of left) {
@@ -40,8 +34,6 @@ input.forEach((line, i) => {
     }
   }
 });
-
-// console.log(results);
 
 const total = results.reduce((acc, curr) => {
   return acc + mapLettersToNumbers(curr);

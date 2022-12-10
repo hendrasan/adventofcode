@@ -21,18 +21,16 @@ input.forEach((line, i) => {
     }
   } else if (line.startsWith("$ cd")) {
     let to = line.substring(5);
-    // console.log("to", to);
-    // console.log("dir (before)", dir);
 
     parentDir = dir;
     if (to == "..") {
-      // get substring of second to last / in dir, so for example /a/b/c/ would become /a/b/
+      // get substring of second to last / in dir,
+      // so for example /a/b/c/ would become /a/b/
       dir = dir.split("/").slice(0, -2).join("/") + "/";
     } else {
       dir = dir + to + "/";
       !tree[parentDir]?.dirs.includes(dir) && tree[parentDir]?.dirs.push(dir);
     }
-    // console.log("dir (after)", dir);
   } else {
     const [size, name] = line.split(" ");
 
@@ -41,8 +39,6 @@ input.forEach((line, i) => {
     tree[dir].size += parseInt(size);
   }
 });
-
-// console.log("tree", tree);
 
 // Thanks, ChatGPT!
 function computeDirSize(obj, entry) {
@@ -69,8 +65,6 @@ for (let entry in tree) {
   let size = computeDirSize(tree, entry);
   finalDirs[entry] = size;
 }
-
-// console.log(finalDirs);
 
 console.log(
   Math.min(

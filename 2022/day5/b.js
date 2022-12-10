@@ -20,11 +20,7 @@ let cratesArr = [];
 let colsLength;
 
 crates.split("\n").forEach((line, i) => {
-  //   console.log("line", line);
-
-  // split line string by a single space after every x chars
   let parts = splitString(line);
-  //   console.log("parts", parts);
 
   if (i === crates.split("\n").length - 1) {
     colsLength = splitString(line).map((col) => parseInt(col, 10)).length;
@@ -45,17 +41,11 @@ for (let i = 0; i < colsLength; i++) {
     .filter((col) => col !== "");
 }
 
-// console.log(cols);
-
 instructions.split("\n").forEach((line, i) => {
   let matches = line.match(/move (\d+) from (\d+) to (\d+)/);
   let move = matches[1];
   let from = matches[2] - 1;
   let to = matches[3] - 1;
-
-  // console.log("move", move);
-  // console.log("from", from);
-  // console.log("to", to);
 
   let temps = [];
 

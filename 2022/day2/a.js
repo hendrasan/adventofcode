@@ -54,17 +54,12 @@ input.forEach((round, i) => {
 
   const elfChoice = elfChoiceMap[elf];
   const yourChoice = yourChoiceMap[you];
-  //   console.log("elf choice", elfChoice);
-  //   console.log("your choice", yourChoice);
 
   const choiceScore = choiceScores[yourChoice];
-  //   console.log("choice score", choiceScore);
 
   const resultScore = compare(elfChoice, yourChoice);
-  //   console.log("result score", resultScore);
 
   const score = choiceScore + resultScore;
-  //   console.log("score", score);
 
   scores += score;
 });
